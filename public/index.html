@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Display Pong</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="ui-layer">
+    <div id="connection-screen">
+        <h1>Multi-Display Pong</h1>
+        <p>Wähle deine Seite aus!</p>
+        <button onclick="join('left')">Links spielen</button>
+        <button onclick="join('right')">Rechts spielen</button>
+        <div class="mode-switch">
+            <label>
+                <input type="checkbox" id="endless-toggle" onchange="toggleMode()"> Endless Mode
+            </label>
+        </div>
+    </div>
+    <div id="status-message">Warte auf Spieler...</div>
+</div>
+
+<canvas id="gameCanvas" width="800" height="800"></canvas>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
